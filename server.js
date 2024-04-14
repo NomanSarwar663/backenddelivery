@@ -28,9 +28,7 @@ const addressRoutes = require('./routes/addressRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const mercadoPagoRoutes = require('./routes/mercadoPagoRoutes');
 
-
-//const port = process.env.PORT || 3000;
-const port = process.env.PORT || 3306;
+const port = process.env.PORT
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -68,18 +66,11 @@ productRoutes(app ,upload);
 orderRoutes(app);
 mercadoPagoRoutes(app);
 
-
-//server.listen(3000, '192.168.1.14' || 'localhost', function() {
-//'localhost'
-
-/* server.listen(3306, 'localhost', function() {
-    console.log('Aplicacion de NodeJS ' + port + ' Iniciada...')
-}); */
-
-server.listen(3306, process.env.MYSQL_ADDON_HOST, function() {
-    console.log('Aplicacion de NodeJS ' + port + ' Iniciada...')
-});
-
+if (port) {
+    server.listen(port, process.env.MYSQL_ADDON_HOST, function() {
+        console.log('Aplicacion de NodeJS ' + port + ' Iniciada...')
+    })
+}
 
 // ERROR HANDLER
 app.use((err, req, res, next) => {
