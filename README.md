@@ -1,2 +1,2 @@
 # backenddelivery
-Here is a project description
+Here is a backend project description
