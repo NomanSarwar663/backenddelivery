@@ -82,11 +82,7 @@ app.get('/',  (req, res) => {
     res.send('Ruta raiz del backend');
 });
 
-
-module.exports = {
-    app: app,
-    server: server
-}
+module.exports = app
 
 // 200 - ES UN RESPUESTA EXITOSA
 // 404 - SIGNIFICA QUE LA URL NO EXISTE
