@@ -86,7 +86,7 @@ app.get("/", (req, res) => {
   res.send("Ruta raiz del backend");
 });
 
-if (production) {
+if (!production) {
   server.listen(port, function () {
     console.log("Aplicacion de NodeJS " + port + " Iniciada...");
   });
