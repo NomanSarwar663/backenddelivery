@@ -21,10 +21,6 @@ const { production } = require("./config/env");
  */
 const ordersSocket = require("./sockets/ordersSocket");
 
-app.get("/", (req, res) => {
-  res.send("Ruta raiz del backend");
-});
-
 /*
  * IMPORTAR RUTAS
  */
@@ -35,7 +31,7 @@ const addressRoutes = require("./routes/addressRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const mercadoPagoRoutes = require("./routes/mercadoPagoRoutes");
 
-const port = process.env.PORT || 3306;
+const port = process.env.PORT;
 
 app.use(logger("dev"));
 app.use(express.json());
