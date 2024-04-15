@@ -4,7 +4,7 @@ const OrderHasProducts = require('../models/order_has_products');
 
 mercadopago.configure({
     sandbox: true,
-    access_token: "${process.env.MERCADOPAGO_ACCESS_TOKEN}"
+    access_token: process.env.MERCADOPAGO_ACCESS_TOKEN
 });
 
 module.exports = {
